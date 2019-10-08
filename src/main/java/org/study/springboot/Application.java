@@ -1,11 +1,17 @@
 package org.study.springboot;
 
+import org.apache.catalina.connector.Connector;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
+import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.study.Saelobi;
 
 /*
@@ -34,18 +40,47 @@ import org.study.Saelobi;
 //@Configuration
 //@ComponentScan
 @SpringBootApplication
+@RestController
 public class Application{
+
+    @GetMapping("/hello")
+    public String hello(){
+        return "Hello SpringBoot!!!";
+    }
+
+    /*
+    * 1. WebApplicationType.SERVLET 으로 설정되어 있으면, AnnotationConfigServletWebServerApplicationContext(Spring MVC)
+    * 2. Servlet 이 없으면 WebFlux 로 되어 있으면 AnnotationConfigReactiveWebServerApplicationContext(Spring WebFlux)
+    * 3. 전부 없을 시 AnnotationConfigApplicationContext 로 설정
+    * */
     public static void main(String[] args){
         SpringApplication application = new SpringApplication(Application.class);
-        application.setWebApplicationType(WebApplicationType.NONE);
+//        application.setWebApplicationType(WebApplicationType.NONE);
+        application.setWebApplicationType(WebApplicationType.SERVLET);
+        application.addListeners(new AppStartingSampleListener());
         application.run(args);
     }
 
     @Bean
-    public Saelobi saelobi(){
-        Saelobi saelobi = new Saelobi();
-        saelobi.setName("KBS2");
-        saelobi.setHowLong(50);
-        return saelobi;
+    public ServletWebServerFactory servletContainer(){
+        TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
+        tomcat.addAdditionalTomcatConnectors(createStandardConnector());
+        return tomcat;
     }
+
+    private Connector createStandardConnector(){
+        Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
+        connector.setPort(8070);
+        return connector;
+    }
+
+
+
+//    @Bean
+//    public Saelobi saelobi(){
+//        Saelobi saelobi = new Saelobi();
+//        saelobi.setName("KBS2");
+//        saelobi.setHowLong(50);
+//        return saelobi;
+//    }
 }
