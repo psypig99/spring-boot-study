@@ -55,9 +55,12 @@ public class Application{
     * */
     public static void main(String[] args){
         SpringApplication application = new SpringApplication(Application.class);
-//        application.setWebApplicationType(WebApplicationType.NONE);
-        application.setWebApplicationType(WebApplicationType.SERVLET);
+        application.setWebApplicationType(WebApplicationType.NONE);
+//        application.setWebApplicationType(WebApplicationType.SERVLET);
         application.addListeners(new AppStartingSampleListener());
+        /*
+        스프링 컨테이너가 생성되기 이전에 생성되는 이벤트를 처리하려면 SpringApplication 객체에
+        해당 리스너를 추가해야 함. */
         application.run(args);
     }
 
