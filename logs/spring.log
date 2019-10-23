@@ -1,0 +1,14 @@
+2019-10-23 11:05:20.219  INFO 110696 --- [main] org.study.springboot.Application         : Starting Application on SEJUN-GRAM15 with PID 110696 (D:\workspaces\IdeaProjects\spring-boot-study\target\classes started by sejun in D:\workspaces\IdeaProjects\spring-boot-study)
+2019-10-23 11:05:20.222 DEBUG 110696 --- [main] org.study.springboot.Application         : Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-10-23 11:05:20.222  INFO 110696 --- [main] org.study.springboot.Application         : The following profiles are active: production,saelobi
+2019-10-23 11:05:21.341  INFO 110696 --- [main] org.study.springboot.Application         : Started Application in 1.605 seconds (JVM running for 3.542)
+2019-10-23 11:05:21.341  INFO 110696 --- [main] org.study.springboot.AppRunner           : ==================
+2019-10-23 11:05:21.343  INFO 110696 --- [main] org.study.springboot.AppRunner           : This is Spring Boot App
+2019-10-23 11:05:21.343  INFO 110696 --- [main] org.study.springboot.AppRunner           : ==================
+2019-10-23 11:09:49.014  INFO 39956 --- [main] org.study.springboot.Application         : Starting Application on SEJUN-GRAM15 with PID 39956 (D:\workspaces\IdeaProjects\spring-boot-study\target\classes started by sejun in D:\workspaces\IdeaProjects\spring-boot-study)
+2019-10-23 11:09:49.018 DEBUG 39956 --- [main] org.study.springboot.Application         : Running with Spring Boot v2.1.8.RELEASE, Spring v5.1.9.RELEASE
+2019-10-23 11:09:49.018  INFO 39956 --- [main] org.study.springboot.Application         : The following profiles are active: production,saelobi
+2019-10-23 11:09:50.028  INFO 39956 --- [main] org.study.springboot.Application         : Started Application in 1.511 seconds (JVM running for 3.321)
+2019-10-23 11:09:50.029  INFO 39956 --- [main] org.study.springboot.AppRunner           : ==================
+2019-10-23 11:09:50.030  INFO 39956 --- [main] org.study.springboot.AppRunner           : This is Spring Boot App
+2019-10-23 11:09:50.030  INFO 39956 --- [main] org.study.springboot.AppRunner           : ==================

@@ -28,8 +28,6 @@ public class AppRunner implements ApplicationRunner {
     @Autowired
     SaelobiProperties properties;
 
-    @Autowired
-    private String hello;
 
 //    slf4j 로깅 파사드를 통해서 logback 로깅모듈을 지원
     private Logger logger = LoggerFactory.getLogger(AppRunner.class);
